@@ -30,23 +30,23 @@ export default function Footer() {
 function ServiceSession() {
   return (
     <div className="flex flex-col space-y-2 text-amber-900">
-      <a href="/services"
+      <a href="/construction"
          className="flex items-center space-x-2 text-xl text-amber-900 font-medium mb-2 -translate-x-2">
         <CubeIcon className="h-6"/>
         <div>
           我們的工作
         </div>
       </a>
-      <a href="/services">
+      <a href="/construction">
         手笛工作坊
       </a>
-      <a href="/services">
+      <a href="/construction">
         體驗講座
       </a>
-      <a href="/services">
+      <a href="/construction">
         商業演出
       </a>
-      <a href="/services">
+      <a href="/construction">
         非牟利項目
       </a>
     </div>
@@ -63,16 +63,16 @@ function GallerySession() {
           過往項目
         </div>
       </a>
-      <a href="/gallery">
+      <a href="/construction">
         手笛工作坊
       </a>
-      <a href="/gallery">
+      <a href="/construction">
         體驗講座
       </a>
-      <a href="/gallery">
+      <a href="/construction">
         商業演出
       </a>
-      <a href="/gallery">
+      <a href="/construction">
         非牟利項目
       </a>
     </div>
@@ -157,16 +157,16 @@ function MobileAccordion() {
             >
               <Disclosure.Panel className="px-4 py-2 text-sm text-amber-900/80">
                 <div className="flex flex-col space-y-3">
-                  <a href="/services">
+                  <a href="/construction">
                     手笛工作坊
                   </a>
-                  <a href="/services">
+                  <a href="/construction">
                     體驗講座
                   </a>
-                  <a href="/services">
+                  <a href="/construction">
                     商業演出
                   </a>
-                  <a href="/services">
+                  <a href="/construction">
                     非牟利項目
                   </a>
                 </div>
@@ -198,16 +198,16 @@ function MobileAccordion() {
             >
               <Disclosure.Panel className="px-4 py-2 text-sm text-amber-900">
                 <div className="flex flex-col space-y-3">
-                  <a href="/gallery">
+                  <a href="/construction">
                     手笛工作坊
                   </a>
-                  <a href="/gallery">
+                  <a href="/construction">
                     體驗講座
                   </a>
-                  <a href="/gallery">
+                  <a href="/construction">
                     商業演出
                   </a>
-                  <a href="/gallery">
+                  <a href="/construction">
                     非牟利項目
                   </a>
                 </div>
