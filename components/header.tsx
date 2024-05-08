@@ -7,7 +7,8 @@ import {
   CubeIcon,
   ArrowLeftEndOnRectangleIcon,
   HomeIcon,
-  LanguageIcon, Bars3Icon, UserPlusIcon,
+  Bars3Icon,
+  UserPlusIcon,
 } from "@heroicons/react/24/outline";
 import {Popover, Transition} from "@headlessui/react";
 import {Fragment} from "react";
@@ -16,9 +17,9 @@ export default function Header() {
 
   const menusItem = [
     {name: "關於我們", description: "了解更多關於手笛協會的信息", href: "/about", icon: InformationCircleIcon},
-    {name: "我們的工作", description: "我們提供的服務", href: "/services", icon: CubeIcon},
-    {name: "過往項目", description: "我們之前的項目", href: "/gallery", icon: BuildingLibraryIcon},
-    {name: "合作機會", description: "成為我們的合作夥伴", href: "/maintenance", icon: UserGroupIcon},
+    {name: "我們的工作", description: "我們提供的服務", href: "/construction", icon: CubeIcon},
+    {name: "過往項目", description: "我們之前的項目", href: "/construction", icon: BuildingLibraryIcon},
+    {name: "合作機會", description: "成為我們的合作夥伴", href: "/construction", icon: UserGroupIcon},
   ]
 
   const actionItem = [
@@ -28,7 +29,7 @@ export default function Header() {
 
   return (
     <>
-      <div className="relative flex text-sm items-center justify-between my-3 lg:my-6 px-4 lg:px-12 selection:bg-amber-900/50">
+      <div className="relative flex text-sm items-center justify-between my-3 lg:my-6 px-4 lg:px-12 selection:bg-amber-900/30">
         <a
           href="/"
           className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white font-bold hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
@@ -47,7 +48,7 @@ export default function Header() {
             </div>
           </a>
           <a
-            href="/services"
+            href="/construction"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <CubeIcon className="h-6"/>
             <div>
@@ -55,7 +56,7 @@ export default function Header() {
             </div>
           </a>
           <a
-            href="/gallery"
+            href="/construction"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <BuildingLibraryIcon className="h-6"/>
             <div>
@@ -63,7 +64,7 @@ export default function Header() {
             </div>
           </a>
           <a
-            href="/maintenance"
+            href="/construction"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <UserGroupIcon className="h-6"/>
             <div>
@@ -73,7 +74,7 @@ export default function Header() {
         </div>
         <div className="hidden lg:flex items-center space-x-2">
           <a
-            href="/session/logon"
+            href="/construction"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white font-bold hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <div>
               登入
@@ -97,11 +98,11 @@ export default function Header() {
             <Popover.Panel className="absolute inset-x-0 z-10 mt-5 flex w-screen max-w-max px-4">
               <div
                 className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
-                <div className="px-4 py-2">
+                <div className="p-2">
                   {menusItem.map((item) => (
-                    <a href={item.href} key={item.name} className="group relative flex gap-x-6 rounded-lg py-2 hover:bg-gray-50">
+                    <a href={item.href} key={item.name} className="group relative flex gap-x-6 rounded-2xl p-2 px-4 hover:bg-orange-50">
                       <div
-                        className="mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-amber-50 group-hover:bg-amber-900/80 transition duration-300 ease-in-out">
+                        className="mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-orange-100 group-hover:bg-amber-900/80 transition duration-300 ease-in-out">
                         <item.icon className="h-7 w-7 text-amber-900 group-hover:text-white" aria-hidden="true"/>
                       </div>
                       <div>
@@ -113,7 +114,7 @@ export default function Header() {
                     </a>
                   ))}
                 </div>
-                <div className="grid grid-cols-2 divide-x divide-amber-50">
+                {/*<div className="grid grid-cols-2 divide-x divide-amber-50">
                   {actionItem.map((item) => (
                     <a
                       key={item.name}
@@ -124,7 +125,7 @@ export default function Header() {
                       {item.name}
                     </a>
                   ))}
-                </div>
+                </div>*/}
               </div>
             </Popover.Panel>
           </Transition>
