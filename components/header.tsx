@@ -60,7 +60,7 @@ export default function Header() {
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <BuildingLibraryIcon className="h-6"/>
             <div>
-              過往項目
+              過往的項目
             </div>
           </a>
           <a
