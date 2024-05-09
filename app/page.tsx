@@ -19,9 +19,9 @@ export default function Home() {
             香港手笛協會是全球唯一推廣普手笛提供及系統教學的機構，成立於2021年 ，致力推廣手笛音樂文化，定期舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。
           </div>
         </div>
-        <div className="flex gap-6">
-          <a href="/about"
-             className="group flex py-2 sm:px-6 px-5 gap-1 items-center bg-amber-900 text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-300 rounded-full">
+        <div className="flex sm:gap-6 gap-2">
+          <a href="/about/contact"
+             className="group flex py-2 sm:px-6 px-4 gap-1 items-center bg-amber-900 text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-300 rounded-full">
             <div className="sm:text-xl text-lg translate-x-3 group-hover:translate-x-0 transition-all duration-300">
               聯絡我們
             </div>
@@ -29,7 +29,7 @@ export default function Home() {
               className="group-hover:opacity-100 opacity-0 h-6 stroke-2 transition-all duration-300"/>
           </a>
           <a href="/about"
-             className="group flex py-2 sm:px-6 px-5 gap-1 items-center hover:bg-amber-900 text-amber-900 hover:text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-200 rounded-full">
+             className="group flex py-2 sm:px-6 px-4 gap-1 items-center hover:bg-amber-900 text-amber-900 hover:text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-200 rounded-full">
             <InformationCircleIcon
               className="h-6 stroke-2"/>
             <div className="sm:text-xl text-lg">
