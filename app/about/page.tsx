@@ -12,9 +12,9 @@ import {
 export default function AboutUs() {
   return (
     <>
-      <div className="flex flex-col items-center justify-center gap-20 sm:p-24 p-10 selection:bg-amber-900/30">
+      <div className="flex flex-col items-center justify-center sm:gap-20 gap-10 sm:p-24 p-12 selection:bg-amber-900/30">
         <div className="flex flex-col justify-center text-center text-amber-900 items-center gap-4 sm:gap-6">
-          <div className="md:text-5xl text-2xl font-bold">
+          <div className="md:text-5xl text-3xl font-bold">
             我們相信手笛是一種獨特的藝術形式
           </div>
           <div className="md:text-xl text-md sm:w-4/5 xl:w-3/5 2xl:w-2/5">

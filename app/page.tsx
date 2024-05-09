@@ -21,18 +21,18 @@ export default function Home() {
         </div>
         <div className="flex gap-6">
           <a href="/about"
-             className="group flex py-2 px-6 gap-1 items-center bg-amber-900 text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-300 rounded-full">
-            <div className="text-xl translate-x-3 group-hover:translate-x-0 transition-all duration-300">
+             className="group flex py-2 sm:px-6 px-5 gap-1 items-center bg-amber-900 text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-300 rounded-full">
+            <div className="sm:text-xl text-lg translate-x-3 group-hover:translate-x-0 transition-all duration-300">
               聯絡我們
             </div>
             <MagnifyingGlassIcon
               className="group-hover:opacity-100 opacity-0 h-6 stroke-2 transition-all duration-300"/>
           </a>
           <a href="/about"
-             className="group flex py-2 px-6 gap-1 items-center hover:bg-amber-900 text-amber-900 hover:text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-200 rounded-full">
+             className="group flex py-2 sm:px-6 px-5 gap-1 items-center hover:bg-amber-900 text-amber-900 hover:text-orange-100 hover:shadow-lg hover:shadow-amber-900/80 hover:scale-[1.01] transition-all duration-200 rounded-full">
             <InformationCircleIcon
               className="h-6 stroke-2"/>
-            <div className="text-xl">
+            <div className="sm:text-xl text-lg">
               瞭解更多
             </div>
           </a>
