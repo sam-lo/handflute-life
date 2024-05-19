@@ -30,7 +30,7 @@ export default function Footer() {
 function ServiceSession() {
   return (
     <div className="flex flex-col space-y-2 text-amber-900">
-      <a href="/construction"
+      <a href="/work"
          className="flex items-center space-x-2 text-xl text-amber-900 font-medium mb-2 -translate-x-2">
         <CubeIcon className="h-6"/>
         <div>

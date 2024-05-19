@@ -1,4 +1,4 @@
-import workshop from "/public/workshop.jpg"
+import workshop from "/public/ivan.jpg"
 import una from "/public/una.jpg"
 import Image from "next/image";
 import * as React from "react";
@@ -8,6 +8,28 @@ import {
   NewspaperIcon,
   UserPlusIcon
 } from "@heroicons/react/24/outline";
+import {Metadata} from "next";
+
+export const metadata: Metadata = {
+  title: "香港手笛協會 | Hong Kong Handflute Association",
+  description: "香港手笛協會 - 全球唯一推廣普手笛提供及系統教學的機構，致力推廣手笛音樂文化",
+  keywords: ["手笛", "笛", "音樂", "文化", "香港", "協會", "手笛協會", "音樂文化", "音樂教育", "音樂推廣", "綠色", "大自然", "handflute", "music", "culture", "hong kong", "association", "handflute association", "music culture", "flute", "music education", "music promotion", "green", "nature"],
+  openGraph: {
+    url: "https://handflute.life",
+    type: "website",
+    title: "香港手笛協會 | Hong Kong Handflute Association",
+    description:
+      "香港手笛協會 - 全球唯一推廣普手笛提供及系統教學的機構，致力推廣手笛音樂文化",
+    images: [
+      {
+        url: "/public/logoWText.jpg",
+        width: 4000,
+        height: 4000,
+        alt: "Hong Kong Handflute Association Logo With Text"
+      }
+    ],
+  },
+}
 
 export default function AboutUs() {
   return (

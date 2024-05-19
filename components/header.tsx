@@ -17,7 +17,7 @@ export default function Header() {
 
   const menusItem = [
     {name: "關於我們", description: "了解更多關於手笛協會的信息", href: "/about", icon: InformationCircleIcon},
-    {name: "我們的工作", description: "我們提供的服務", href: "/construction", icon: CubeIcon},
+    {name: "我們的工作", description: "我們提供的服務", href: "/work", icon: CubeIcon},
     {name: "過往項目", description: "我們之前的項目", href: "/construction", icon: BuildingLibraryIcon},
     {name: "合作機會", description: "成為我們的合作夥伴", href: "/construction", icon: UserGroupIcon},
   ]
@@ -48,7 +48,7 @@ export default function Header() {
             </div>
           </a>
           <a
-            href="/construction"
+            href="/work"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
             <CubeIcon className="h-6"/>
             <div>

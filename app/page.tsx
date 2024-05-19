@@ -5,7 +5,7 @@ import {Metadata} from "next";
 export const metadata: Metadata = {
   title: "香港手笛協會 | Hong Kong Handflute Association",
   description: "香港手笛協會 - 全球唯一推廣普手笛提供及系統教學的機構，致力推廣手笛音樂文化",
-  keywords: ["手笛", "音樂", "文化", "香港", "協會", "手笛協會", "音樂文化", "音樂教育", "音樂推廣", "綠色", "大自然"],
+  keywords: ["手笛", "笛", "音樂", "文化", "香港", "協會", "手笛協會", "音樂文化", "音樂教育", "音樂推廣", "綠色", "大自然", "handflute", "music", "culture", "hong kong", "association", "handflute association", "music culture", "flute", "music education", "music promotion", "green", "nature"],
   openGraph: {
     url: "https://handflute.life",
     type: "website",
