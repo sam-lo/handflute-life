@@ -11,7 +11,7 @@ export const metadata: Metadata = {
     type: "website",
     title: "香港手笛協會 | Hong Kong Handflute Association",
     description:
-      "香港手笛協會 - 全球唯一推廣普手笛提供及系統教學的機構，致力推廣手笛音樂文化",
+      "香港手笛協會 - 全球唯一推廣普及手笛並提供系統式教學的機構，致力推廣手笛音樂文化",
     images: [
       {
         url: "/public/logoWText.jpg",
@@ -20,6 +20,9 @@ export const metadata: Metadata = {
         alt: "Hong Kong Handflute Association Logo With Text"
       }
     ],
+  },
+  icons: {
+    icon: "/logoWText.jpg",
   },
 }
 
@@ -37,7 +40,7 @@ export default function Home() {
             隨時 隨地 隨心
           </div>
           <div className="md:text-xl text-sm opacity-80 md:w-4/5">
-            香港手笛協會是全球唯一推廣普手笛提供及系統教學的機構，成立於2021年 ，致力推廣手笛音樂文化，定期舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。
+            香港手笛協會是全球唯一推廣普及手笛並提供系統式教學的機構，成立於2021年 ，致力推廣手笛音樂文化，定期舉辦手笛工作坊、體驗講座、商業演出、非牟利機構等。
           </div>
         </div>
         <div className="flex sm:gap-6 gap-2">
