@@ -1,11 +1,15 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/header";
 import Footer from "@/components/footer";
-import Head from "next/head";
+import { Inter as FontSans } from "next/font/google"
 
-const inter = Inter({ subsets: ["latin"] });
+import { cn } from "@/lib/utils"
+
+const fontSans = FontSans({
+  subsets: ["latin"],
+  variable: "--font-sans",
+})
 
 export const metadata: Metadata = {
   title: "香港手笛協會 | Hong Kong Handflute Association",
@@ -42,8 +46,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-    <body className={inter.className}>
+    <html lang="en" suppressHydrationWarning>
+    <body className={cn(
+      "min-h-screen bg-background font-sans antialiased",
+      fontSans.variable)}>
     <link rel="icon" href="/public/favicon.ico" sizes="any"/>
     <Header/>
     {children}

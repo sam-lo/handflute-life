@@ -1,10 +1,10 @@
 "use client"
-import perform from "/public/perform.jpg"
-import workshop from "/public/workshop.jpg"
-import nonprofit from "/public/nonprofit.jpg"
-import talk from "/public/talk.jpg"
+import perform from "/public/image/perform.jpg"
+import workshop from "/public/image/workshop.jpg"
+import nonprofit from "/public/image/nonprofit.jpg"
+import talk from "/public/image/talk.jpg"
+import course from "/public/image/course.jpg"
 import Image from "next/image";
-import {StaticImageData} from "next/image";
 import {ArrowRightIcon, XCircleIcon} from "@heroicons/react/24/outline";
 import React, {ReactNode, useState, SetStateAction, Dispatch} from "react";
 import useMeasure from "react-use-measure";
@@ -55,12 +55,20 @@ export default function Work() {
       description: "我們定期舉辦手笛體驗講座，讓更多有興趣的人士參加。在這些講座上大家可以互相交流，了解手笛的歷史和演奏方法，並親身試玩。",
       image: talk,
       alt: "體驗講座"
-    }]
+    },
+    {
+      id: 5,
+      title: "常規課程",
+      description: "我們會定期舉辦課程教授手笛技巧，涵蓋轉音、吹奏等技巧。課程由淺入深發掘手笛演奏的各種可能性，適合各個程度的手笛愛好者。",
+      image: course,
+      alt: "常規課程"
+    }
+    ]
 
   return (
     <>
       <div
-        className="flex flex-col items-center justify-center sm:gap-20 gap-10 sm:p-24 p-10 selection:bg-amber-900/30 transition duration-300">
+        className="flex flex-col items-center justify-center sm:gap-20 gap-10 sm:py-24 p-10 selection:bg-amber-900/30 transition duration-300">
         <div className="flex flex-col justify-center text-center text-amber-900 items-center gap-4 sm:gap-6">
           <div className="sm:text-5xl text-3xl font-bold">
             手笛推廣是持續的工作
@@ -70,12 +78,12 @@ export default function Work() {
             自從2021年起於香港本地推廣手笛音樂文化，以非牟利形式與不同機構合作，舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。希望令更多人認識手笛，這個獨特的音樂形式。
           </div>
         </div>
-        <div className="grid justify-center items-center 2xl:grid-cols-4 lg:grid-cols-2 grid-cols-1 gap-10">
+        <div className="flex justify-evenly flex-wrap gap-10">
           {types.map((type) => (
             <button key={type.id} onClick={() => handleClick(type.id)}
-                    className="bg-amber-50 overflow-hidden rounded-3xl shadow-2xl group relative hover:scale-[1.01] transition duration-1000">
+                    className="sm:w-96 bg-amber-50 overflow-hidden rounded-3xl shadow-2xl group relative hover:scale-[1.01] transition duration-1000">
               <Image src={type.image} alt={type.alt}
-                     className="group-hover:scale-105 transition ease-in-out duration-1000"/>
+                     className="aspect-[3/2] group-hover:scale-105 transition ease-in-out duration-1000"/>
               <ArrowRightIcon
                 className="absolute stroke-amber-50 top-4 right-4 h-8 transition group-hover:-rotate-45 duration-300"/>
               <div
@@ -93,7 +101,7 @@ export default function Work() {
         <DragCloseDrawer open={open} setOpen={setOpen}>
           <div className="mx-auto sm:px-0 px-12 max-w-2xl space-y-4 text-neutral-400">
             <h2 className="text-4xl font-bold text-neutral-200">
-              {key == 1 ? "商業演出" : key == 2 ? "手笛工作坊" : key == 3 ? "非牟利項目" : key == 4 ? "體驗講座" : ""}
+              {key == 1 ? "商業演出" : key == 2 ? "手笛工作坊" : key == 3 ? "非牟利項目" : key == 4 ? "體驗講座" : key == 5 ? "常規課程" : ""}
             </h2>
             <p>
               For More Information Contact us

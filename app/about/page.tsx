@@ -1,14 +1,9 @@
-import workshop from "/public/ivan.jpg"
-import una from "/public/una.jpg"
+import workshop from "/public/image/ivan.jpg"
+import una from "/public/image/una.jpg"
 import Image from "next/image";
 import * as React from "react";
-import {
-  ChatBubbleOvalLeftEllipsisIcon,
-  CloudArrowDownIcon,
-  NewspaperIcon,
-  UserPlusIcon
-} from "@heroicons/react/24/outline";
 import {Metadata} from "next";
+import {menusItems} from "@/app/data/menuItems";
 
 export const metadata: Metadata = {
   title: "香港手笛協會 | Hong Kong Handflute Association",
@@ -25,7 +20,7 @@ export const metadata: Metadata = {
         url: "/public/logoWText.jpg",
         width: 4000,
         height: 4000,
-        alt: "Hong Kong Handflute Association Logo With Text"
+        alt: "Hong Kong Handflute Association Logo"
       }
     ],
   },
@@ -34,7 +29,14 @@ export const metadata: Metadata = {
   },
 }
 
+interface SubItem {
+  name: string;
+  href: string;
+  icon?: React.ComponentType<React.SVGProps<SVGSVGElement>>;
+}
+
 export default function AboutUs() {
+
   return (
     <>
       <div
@@ -72,48 +74,19 @@ export default function AboutUs() {
             <Image src={workshop} alt={"手笛工作坊"} className="md:w-1/2 rounded-3xl"/>
           </div>
         </div>
-        <Subheading/>
+      </div>
+      <div className="grid xl:grid-cols-4 sm:grid-cols-2 grid-cols-1 justify-center -translate-x-2 sm:-translate-x-0 items-start gap-2 sm:gap-4 sm:px-24 p-10 text-amber-900 selection:bg-amber-900/30">
+        {menusItems.find((item) => item.id === 1)?.sub?.map((subItem: SubItem) => {
+          return (
+            <a key={subItem.href} href={subItem.href} className="flex sm:flex-col gap-3 items-center justify-center px-6 py-3 sm:px-10 sm:py-6 rounded-full hover:bg-orange-200/50 bg-opacity-80 transition duration-300">
+              {subItem.icon && <subItem.icon className="h-12" />}
+              <div className="text-3xl">
+                {subItem.name}
+              </div>
+            </a>
+          );
+        })}
       </div>
     </>
-  )
-}
-
-function Subheading() {
-  return (
-    <div
-      className="grid grid-cols-1 xl:grid-cols-4 sm:grid-cols-2 justify-center -translate-x-2 sm:-translate-x-0 items-start gap-2 sm:gap-4 text-amber-900 selection:bg-amber-900/30">
-      <a
-        href="/construction"
-        className="flex sm:flex-col gap-3 items-center justify-center px-6 py-3 sm:px-12 sm:py-6 rounded-full hover:bg-orange-200/50 bg-opacity-80 transition duration-300">
-        <CloudArrowDownIcon className="h-12 "/>
-        <div className="text-3xl">
-          資源下載
-        </div>
-      </a>
-      <a
-        href="/construction"
-        className="flex sm:flex-col gap-3 items-center justify-center px-6 py-3 sm:px-12 sm:py-6 rounded-full hover:bg-orange-200/50 bg-opacity-80 transition duration-300">
-        <NewspaperIcon className="h-12 "/>
-        <div className="text-3xl">
-          最新資訊
-        </div>
-      </a>
-      <a
-        href="/about/contact"
-        className="flex sm:flex-col gap-3 items-center justify-center px-6 py-3 sm:px-12 sm:py-6 rounded-full hover:bg-orange-200/50 bg-opacity-80 transition duration-300">
-        <ChatBubbleOvalLeftEllipsisIcon className="h-12 "/>
-        <div className="text-3xl">
-          聯絡我們
-        </div>
-      </a>
-      <a
-        href="/construction"
-        className="flex sm:flex-col gap-3 items-center justify-center px-6 py-3 sm:px-14 sm:py-6 rounded-full hover:bg-orange-200/50 bg-opacity-80 transition duration-300">
-        <UserPlusIcon className="h-12 "/>
-        <div className="text-3xl">
-          加入我們
-        </div>
-      </a>
-    </div>
   )
 }
