@@ -30,9 +30,7 @@ export default function Header() {
         </a>
         <div className="hidden lg:flex items-center justify-center space-x-12">
           {menusItems.map((item) => (
-            <a
-              href={item.href}
-              className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
+            <a key={item.id} href={item.href} className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
               <item.icon className="h-6"/>
               <div>
                 {item.name}
