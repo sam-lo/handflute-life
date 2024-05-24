@@ -69,24 +69,24 @@ export const menusItems = [
     id: 3,
     name: "常見問題",
     description: "關於手笛的常見問題",
-    href: "/construction",
+    href: "/support",
     icon: ChatBubbleLeftRightIcon,
     sub: [
       {
         name: "手笛是甚麼",
-        href: "/construction",
+        href: "/support",
       },
       {
         name: "手笛難學嗎",
-        href: "/construction",
+        href: "/support",
       },
       {
         name: "甚麼人適合學習",
-        href: "/construction",
+        href: "/support",
       },
       {
         name: "手笛的音樂理論",
-        href: "/construction",
+        href: "/support",
       }
     ]
   },

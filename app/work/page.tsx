@@ -1,14 +1,15 @@
 "use client"
-import perform from "/public/image/perform.jpg"
-import workshop from "/public/image/workshop.jpg"
-import nonprofit from "/public/image/nonprofit.jpg"
-import talk from "/public/image/talk.jpg"
-import course from "/public/image/course.jpg"
+import React, {Dispatch, ReactNode, SetStateAction, useState} from "react";
+import perform from "@/public/image/perform.jpg";
+import workshop from "@/public/image/workshop.jpg";
+import nonprofit from "@/public/image/nonprofit.jpg";
+import talk from "@/public/image/talk.jpg";
+import course from "@/public/image/course.jpg";
+import Session from "@/components/session";
 import Image from "next/image";
 import {ArrowRightIcon, XCircleIcon} from "@heroicons/react/24/outline";
-import React, {ReactNode, useState, SetStateAction, Dispatch} from "react";
+import {motion, useAnimate, useDragControls, useMotionValue} from "framer-motion";
 import useMeasure from "react-use-measure";
-import {useDragControls, useMotionValue, useAnimate, motion} from "framer-motion";
 
 interface Props {
   open: boolean;
@@ -16,7 +17,7 @@ interface Props {
   children?: ReactNode;
 }
 
-export default function Work() {
+export default function Page() {
 
   const [open, setOpen] = useState(false);
 
@@ -63,21 +64,11 @@ export default function Work() {
       image: course,
       alt: "常規課程"
     }
-    ]
+  ]
 
   return (
     <>
-      <div
-        className="flex flex-col items-center justify-center sm:gap-20 gap-10 sm:py-24 p-10 selection:bg-amber-900/30 transition duration-300">
-        <div className="flex flex-col justify-center text-center text-amber-900 items-center gap-4 sm:gap-6">
-          <div className="sm:text-5xl text-3xl font-bold">
-            手笛推廣是持續的工作
-          </div>
-          <div className="sm:text-xl text-md sm:w-4/5 xl:w-3/5 2xl:w-2/5">
-            香港手笛協會Hong Kong Handflute Association
-            自從2021年起於香港本地推廣手笛音樂文化，以非牟利形式與不同機構合作，舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。希望令更多人認識手笛，這個獨特的音樂形式。
-          </div>
-        </div>
+      <Session title="手笛推廣是持續的工作" description="香港手笛協會Hong Kong Handflute Association 自從2021年起於香港本地推廣手笛音樂文化，以非牟利形式與不同機構合作，舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。希望令更多人認識手笛，這個獨特的音樂形式。">
         <div className="flex justify-evenly flex-wrap gap-10">
           {types.map((type) => (
             <button key={type.id} onClick={() => handleClick(type.id)}
@@ -108,7 +99,7 @@ export default function Work() {
             </p>
           </div>
         </DragCloseDrawer>
-      </div>
+      </Session>
     </>
   )
 }

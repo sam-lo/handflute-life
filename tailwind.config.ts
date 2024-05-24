@@ -21,7 +21,14 @@ const config = {
     },
     extend: {
       fontFamily: {
-        sans: ["var(--font-sans)", ...fontFamily.sans],
+        sans: ["var(--font-sans)", ...fontFamily.sans, "SF Pro", "san-serif"],
+      },
+      colors: {
+        primary: "var(--color-primary)",
+      },
+      backgroundImage: {
+        texture:
+          "url(/glow-texture.png), radial-gradient(var(--color-primary), transparent 70%)",
       },
       keyframes: {
         "accordion-down": {
