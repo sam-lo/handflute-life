@@ -45,7 +45,7 @@ function QuestionPage() {
         <div className="flex flex-col gap-5 text-amber-900">
           {questions.map((question) => (
             <button onClick={() => setOpen(question.id)} key={question.id}
-                    className="flex flex-col backdrop-blur-sm max-w-3xl gap-4 sm:gap-6 sm:p-8 p-6 outline outline-2 outline-amber-900 rounded-3xl">
+                    className="flex flex-col backdrop-blur-sm max-w-3xl gap-4 sm:gap-6 sm:p-8 p-6 outline outline-2 outline-amber-900 rounded-3xl hover:scale-[1.02] transition duration-500">
               <div className="sm:text-3xl text-xl font-bold text-start">
                 {question.title}
               </div>

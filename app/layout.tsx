@@ -4,6 +4,7 @@ import Header from "@/components/header";
 import Footer from "@/components/footer";
 import { Inter as FontSans } from "next/font/google"
 import { cn } from "@/lib/utils"
+import React from "react";
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -49,15 +50,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-      <html lang="en" suppressHydrationWarning>
-      <body className={cn(
-        "min-h-screen bg-background font-sans antialiased",
-        fontSans.variable)}>
+    <html lang="en" suppressHydrationWarning>
+    <head>
+      <title>
+        香港手笛協會 | Hong Kong Handflute Association
+      </title>
       <link rel="icon" href="/public/favicon.ico" sizes="any"/>
-      <Header/>
-      {children}
-      <Footer/>
-      </body>
-      </html>
+    </head>
+    <body className={cn(
+      "min-h-screen bg-background font-sans antialiased",
+      fontSans.variable)}>
+    <Header/>
+    {children}
+    <Footer/>
+    </body>
+    </html>
   );
 }

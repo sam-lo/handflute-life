@@ -29,7 +29,7 @@ export const menusItems = [
       {
         id: 3,
         name: "最新資訊",
-        href: "/about",
+        href: "/about/newsroom",
         icon: NewspaperIcon,
       },
       {
