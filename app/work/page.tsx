@@ -17,7 +17,7 @@ interface Props {
   children?: ReactNode;
 }
 
-export default function Page() {
+export default function Work() {
 
   const [open, setOpen] = useState(false);
 

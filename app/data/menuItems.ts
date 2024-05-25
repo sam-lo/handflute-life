@@ -15,21 +15,25 @@ export const menusItems = [
     icon: InformationCircleIcon,
     sub: [
       {
+        id: 1,
         name: "聯絡我們",
         href: "/about/contact",
         icon: ChatBubbleOvalLeftEllipsisIcon,
       },
       {
+        id: 2,
         name: "資源下載",
         href: "/about",
         icon: CloudArrowDownIcon,
       },
       {
+        id: 3,
         name: "最新資訊",
         href: "/about",
         icon: NewspaperIcon,
       },
       {
+        id: 4,
         name: "加入我們",
         href: "/about/contact",
         icon: UserPlusIcon,
@@ -44,22 +48,27 @@ export const menusItems = [
     icon: CubeIcon,
     sub: [
       {
+        id: 1,
         name: "手笛工作坊",
         href: "/work",
       },
       {
+        id: 2,
         name: "體驗講座",
         href: "/work",
       },
       {
+        id: 3,
         name: "商業演出",
         href: "/work",
       },
       {
+        id: 4,
         name: "常規課程",
         href: "/work",
       },
       {
+        id: 5,
         name: "非牟利項目",
         href: "/work",
       },
@@ -73,21 +82,20 @@ export const menusItems = [
     icon: ChatBubbleLeftRightIcon,
     sub: [
       {
+        id: 1,
         name: "手笛是甚麼",
         href: "/support",
       },
       {
+        id: 2,
         name: "手笛難學嗎",
         href: "/support",
       },
       {
+        id: 3,
         name: "甚麼人適合學習",
         href: "/support",
       },
-      {
-        name: "手笛的音樂理論",
-        href: "/support",
-      }
     ]
   },
   {
@@ -98,18 +106,22 @@ export const menusItems = [
     icon: UserGroupIcon,
     sub: [
       {
+        id: 1,
         name: "我們的合作夥伴",
         href: "/construction",
       },
       {
+        id: 2,
         name: "以往項目評價",
         href: "/construction",
       },
       {
+        id: 3,
         name: "成為合作夥伴",
         href: "/construction",
       },
       {
+        id: 4,
         name: "與我們合作",
         href: "/construction",
       }

@@ -18,7 +18,7 @@ export default function Footer() {
                 </div>
               </a>
               {item.sub.map((subItem) => (
-                <a href={subItem.href} key={subItem.href}>
+                <a className="sub-link" key={subItem.id} href={subItem.href + "?id=" + subItem.id.toString()}>
                   {subItem.name}
                 </a>
               ))}
@@ -62,7 +62,7 @@ function MobileAccordion() {
                 <Disclosure.Panel className="px-4 py-2 text-sm text-amber-900">
                   <div className="flex flex-col space-y-3">
                     {item.sub.map((subItem) => (
-                      <a href={subItem.href} key={subItem.href}>
+                      <a key={subItem.id} href={subItem.href + "?id=" + subItem.id.toString()}>
                         {subItem.name}
                       </a>
                     ))}
