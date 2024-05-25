@@ -1,9 +1,17 @@
 "use client"
-import React, {useState} from "react";
+import React, {Suspense, useState} from "react";
 import Session from "@/components/session";
 import {useSearchParams} from "next/navigation";
 
 export default function Question() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+        <QuestionPage/>
+      </Suspense>
+  )
+}
+
+function QuestionPage() {
 
   const searchParams = useSearchParams();
 
@@ -36,11 +44,13 @@ export default function Question() {
       <Session title="常見問題" description="讓我們解答你的疑問">
         <div className="flex flex-col gap-5 text-amber-900">
           {questions.map((question) => (
-            <button onClick={() => setOpen(question.id)} key={question.id} className="flex flex-col backdrop-blur-sm max-w-3xl gap-4 sm:gap-6 sm:p-8 p-6 outline outline-2 outline-amber-900 rounded-3xl">
+            <button onClick={() => setOpen(question.id)} key={question.id}
+                    className="flex flex-col backdrop-blur-sm max-w-3xl gap-4 sm:gap-6 sm:p-8 p-6 outline outline-2 outline-amber-900 rounded-3xl">
               <div className="sm:text-3xl text-xl font-bold text-start">
                 {question.title}
               </div>
-              <div className={"sm:text-lg text-sm text-start transition duration-300 " + (open == question.id ? "" : "hidden")}>
+              <div
+                className={"sm:text-lg text-sm text-start transition duration-300 " + (open == question.id ? "" : "hidden")}>
                 {question.description}
               </div>
             </button>

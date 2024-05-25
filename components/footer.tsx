@@ -2,12 +2,10 @@
 import {ChevronUpIcon} from "@heroicons/react/24/outline";
 import {Disclosure, Transition} from "@headlessui/react";
 import {menusItems} from "@/app/data/menuItems";
-import { Suspense } from 'react';
 
 export default function Footer() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
         <div className="hidden md:flex flex-col gap-8 mb-2 mt-16 mx-16 selection:bg-amber-900/30">
           <div className="flex flex-wrap justify-evenly gap-16">
             {menusItems.map((item) => (
@@ -32,7 +30,6 @@ export default function Footer() {
           </div>
         </div>
         <MobileAccordion/>
-      </Suspense>
     </>
   )
 }
