@@ -2,34 +2,37 @@
 import {ChevronUpIcon} from "@heroicons/react/24/outline";
 import {Disclosure, Transition} from "@headlessui/react";
 import {menusItems} from "@/app/data/menuItems";
+import { Suspense } from 'react';
 
 export default function Footer() {
   return (
     <>
-      <div className="hidden md:flex flex-col gap-8 mb-2 mt-16 mx-16 selection:bg-amber-900/30">
-        <div className="flex flex-wrap justify-evenly gap-16">
-          {menusItems.map((item) => (
-            <div key={item.id} className="flex flex-col space-y-2 text-amber-900">
-              <a href={item.href}
-                 className="flex items-center space-x-2 text-xl text-amber-900 font-medium mb-2 -translate-x-2">
-                <item.icon className="h-6"/>
-                <div>
-                  {item.name}
-                </div>
-              </a>
-              {item.sub.map((subItem) => (
-                <a className="sub-link" key={subItem.id} href={subItem.href + "?id=" + subItem.id.toString()}>
-                  {subItem.name}
+      <Suspense fallback={<div>Loading...</div>}>
+        <div className="hidden md:flex flex-col gap-8 mb-2 mt-16 mx-16 selection:bg-amber-900/30">
+          <div className="flex flex-wrap justify-evenly gap-16">
+            {menusItems.map((item) => (
+              <div key={item.id} className="flex flex-col space-y-2 text-amber-900">
+                <a href={item.href}
+                   className="flex items-center space-x-2 text-xl text-amber-900 font-medium mb-2 -translate-x-2">
+                  <item.icon className="h-6"/>
+                  <div>
+                    {item.name}
+                  </div>
                 </a>
-              ))}
-            </div>
-          ))}
+                {item.sub.map((subItem) => (
+                  <a className="sub-link" key={subItem.id} href={subItem.href + "?id=" + subItem.id.toString()}>
+                    {subItem.name}
+                  </a>
+                ))}
+              </div>
+            ))}
+          </div>
+          <div className="text-amber-900 text-sm">
+            © 2024 OMORI STUDIO. All rights reserved.
+          </div>
         </div>
-        <div className="text-amber-900 text-sm">
-          © 2024 OMORI STUDIO. All rights reserved.
-        </div>
-      </div>
-      <MobileAccordion/>
+        <MobileAccordion/>
+      </Suspense>
     </>
   )
 }
