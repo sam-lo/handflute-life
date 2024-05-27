@@ -5,9 +5,19 @@ import * as React from "react";
 import {Metadata} from "next";
 import {menusItems} from "@/app/data/menuItems";
 import Session from "@/components/session";
+import {Variants} from "framer-motion";
 
 export const metadata: Metadata = {
   title: "關於我們"
+}
+
+const itemVariants: Variants = {
+  offscreen: {
+    y: 300
+  },
+  onscreen: {
+    y: 50
+  }
 }
 
 interface SubItem {

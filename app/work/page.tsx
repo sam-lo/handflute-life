@@ -1,5 +1,5 @@
 "use client"
-import React, {Dispatch, ReactNode, SetStateAction, useState} from "react";
+import React, { useState } from "react";
 import perform from "@/public/image/perform.jpg";
 import workshop from "@/public/image/workshop.jpg";
 import nonprofit from "@/public/image/nonprofit.jpg";
@@ -7,25 +7,18 @@ import talk from "@/public/image/talk.jpg";
 import course from "@/public/image/course.jpg";
 import Session from "@/components/session";
 import Image from "next/image";
-import {ArrowRightIcon, XCircleIcon} from "@heroicons/react/24/outline";
-import {motion, useAnimate, useDragControls, useMotionValue} from "framer-motion";
-import useMeasure from "react-use-measure";
-
-interface Props {
-  open: boolean;
-  setOpen: Dispatch<SetStateAction<boolean>>;
-  children?: ReactNode;
-}
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
+import { Dialog, DialogPanel, DialogTitle, Transition, TransitionChild } from '@headlessui/react'
 
 export default function Work() {
 
-  const [open, setOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   const [key, setKey] = useState(0);
 
   const handleClick = (id: number) => {
-    /*setOpen(true);*/
     setKey(id);
+    setIsOpen(false)
   }
 
   const types = [
@@ -68,7 +61,8 @@ export default function Work() {
 
   return (
     <>
-      <Session title="手笛推廣是持續的工作" description="香港手笛協會Hong Kong Handflute Association 自從2021年起於香港本地推廣手笛音樂文化，以非牟利形式與不同機構合作，舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。希望令更多人認識手笛，這個獨特的音樂形式。">
+      <Session title="手笛推廣是持續的工作"
+               description="香港手笛協會Hong Kong Handflute Association 自從2021年起於香港本地推廣手笛音樂文化，以非牟利形式與不同機構合作，舉辦手笛工作坊、體驗講座、商業演出、非牟利項目等等。希望令更多人認識手笛，這個獨特的音樂形式。">
         <div className="flex justify-evenly flex-wrap gap-10">
           {types.map((type) => (
             <button key={type.id} onClick={() => handleClick(type.id)}
@@ -89,91 +83,40 @@ export default function Work() {
             </button>
           ))}
         </div>
-        <DragCloseDrawer open={open} setOpen={setOpen}>
-          <div className="mx-auto sm:px-0 px-12 max-w-2xl space-y-4 text-neutral-400">
-            <h2 className="text-4xl font-bold text-neutral-200">
-              {key == 1 ? "商業演出" : key == 2 ? "手笛工作坊" : key == 3 ? "非牟利項目" : key == 4 ? "體驗講座" : key == 5 ? "常規課程" : ""}
-            </h2>
-            <p>
-              For More Information Contact us
-            </p>
-          </div>
-        </DragCloseDrawer>
       </Session>
+      <Transition appear show={isOpen}>
+        <Dialog as="div" className="relative z-10 focus:outline-none" onClose={() => setIsOpen(true)}>
+          <div className="fixed inset-0 z-10 w-screen overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center p-4">
+              <TransitionChild
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 transform-[scale(95%)]"
+                enterTo="opacity-100 transform-[scale(100%)]"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 transform-[scale(100%)]"
+                leaveTo="opacity-0 transform-[scale(95%)]"
+              >
+                <DialogPanel className="w-full max-w-xl rounded-3xl bg-amber-900/20 backdrop-blur-2xl p-6">
+                  <DialogTitle as="div" className="text-2xl font-medium text-white">
+                    {types.find((type) => type.id === key)?.title}
+                  </DialogTitle>
+                  <p className="mt-8 text-lg text-white">
+                    {types.find((type) => type.id === key)?.description}
+                  </p>
+                  <div className="mt-4">
+                    <button
+                      className="inline-flex items-center gap-2 rounded-xl bg-gray-700 py-1.5 px-3 text-sm/6 font-semibold text-white shadow-inner shadow-white/10 focus:outline-none data-[hover]:bg-gray-600 data-[open]:bg-gray-700 data-[focus]:outline-1 data-[focus]:outline-white"
+                      onClick={() => setIsOpen(false)}
+                    >
+                      退出
+                    </button>
+                  </div>
+                </DialogPanel>
+              </TransitionChild>
+            </div>
+          </div>
+        </Dialog>
+      </Transition>
     </>
   )
 }
-
-const DragCloseDrawer = ({open, setOpen, children}: Props) => {
-  const [scope, animate] = useAnimate();
-  const [drawerRef, {height}] = useMeasure();
-
-  const y = useMotionValue(0);
-  const controls = useDragControls();
-
-  const handleClose = async () => {
-    animate(scope.current, {
-      opacity: [1, 0],
-    });
-
-    const yStart = typeof y.get() === "number" ? y.get() : 0;
-
-    await animate("#drawer", {
-      y: [yStart, height],
-    });
-
-    setOpen(false);
-  };
-
-  return (
-    <>
-      {open && (
-        <motion.div
-          ref={scope}
-          initial={{opacity: 0}}
-          animate={{opacity: 1}}
-          onClick={handleClose}
-          className="fixed inset-0 z-50 bg-neutral-950/70"
-        >
-          <motion.div
-            id="drawer"
-            ref={drawerRef}
-            onClick={(e) => e.stopPropagation()}
-            initial={{y: "100%"}}
-            animate={{y: "0%"}}
-            transition={{
-              ease: "easeInOut",
-            }}
-            className="absolute sm:mx-16 bottom-0 inset-x-0 h-[80vh] sm:h-[90vh] overflow-hidden rounded-t-3xl bg-neutral-900"
-            style={{y}}
-            drag="y"
-            dragControls={controls}
-            onDragEnd={() => {
-              if (y.get() >= 100) {
-                handleClose();
-              }
-            }}
-            dragListener={false}
-            dragConstraints={{
-              top: 0,
-              bottom: 0,
-            }}
-            dragElastic={{
-              top: 0,
-              bottom: 0.5,
-            }}
-          >
-            <div className="absolute right-0 top-0 z-10 flex justify-end bg-neutral-900 pr-4 pt-4">
-              <button onClick={handleClose}>
-                <XCircleIcon className="w-10 sm:w-14 stroke-neutral-700"/>
-              </button>
-            </div>
-            <div className="relative z-0 h-full overflow-y-scroll p-4 pt-12">
-              {children}
-            </div>
-          </motion.div>
-        </motion.div>
-      )}
-    </>
-  );
-};
