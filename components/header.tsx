@@ -38,7 +38,7 @@ export default function Header() {
             </a>
           ))}
         </div>
-        <div className="hidden lg:flex items-center space-x-2">
+        {/* <div className="hidden lg:flex items-center space-x-2">
           <a
             href="/construction"
             className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white font-bold hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
@@ -47,7 +47,7 @@ export default function Header() {
             </div>
             <ArrowLeftEndOnRectangleIcon className="h-6 stroke-2"/>
           </a>
-        </div>
+        </div>*/}
         <Popover className="lg:hidden">
           <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
             <Bars3Icon className='h-6 w-6 text-amber-900' aria-hidden="true"/>
