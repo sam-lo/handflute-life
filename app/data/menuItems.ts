@@ -23,7 +23,7 @@ export const menusItems = [
       {
         id: 2,
         name: "資源下載",
-        href: "/about",
+        href: "/public/downloads",
         icon: CloudArrowDownIcon,
       },
       {
@@ -102,28 +102,28 @@ export const menusItems = [
     id: 4,
     name: "合作機會",
     description: "成為我們的合作夥伴",
-    href: "/construction",
+    href: "/collab",
     icon: UserGroupIcon,
     sub: [
       {
         id: 1,
         name: "我們的合作夥伴",
-        href: "/construction",
+        href: "/collab",
       },
       {
         id: 2,
         name: "以往項目評價",
-        href: "/construction",
+        href: "/collab",
       },
       {
         id: 3,
         name: "成為合作夥伴",
-        href: "/construction",
+        href: "/collab",
       },
       {
         id: 4,
         name: "與我們合作",
-        href: "/construction",
+        href: "/collab",
       }
     ]
   },

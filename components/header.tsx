@@ -6,7 +6,7 @@ import {
   Bars3Icon,
   UserPlusIcon,
 } from "@heroicons/react/24/outline";
-import {Popover, Transition} from "@headlessui/react";
+import {Popover, PopoverButton, Transition} from "@headlessui/react";
 import {Fragment} from "react";
 import {menusItems} from "@/app/data/menuItems";
 
@@ -29,7 +29,7 @@ export default function Header() {
           </div>
         </a>
         <div className="hidden lg:flex items-center justify-center space-x-12">
-          {menusItems.map((item) => (
+          {menusItems.filter(item => item.id !== 4).map((item) => (
             <a key={item.id} href={item.href} className="flex items-center space-x-2 hover:bg-amber-900/80 text-amber-900 hover:text-white hover:shadow-lg hover:shadow-amber-900/80 px-3 py-2 rounded-3xl ease-in-out transition duration-300">
               <item.icon className="h-6"/>
               <div>
@@ -49,9 +49,9 @@ export default function Header() {
           </a>
         </div>
         <Popover className="lg:hidden">
-          <Popover.Button className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
+          <PopoverButton className="inline-flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900">
             <Bars3Icon className='h-6 w-6 text-amber-900' aria-hidden="true"/>
-          </Popover.Button>
+          </PopoverButton>
           <Transition
             as={Fragment}
             enter="transition ease-out duration-200"
@@ -65,7 +65,7 @@ export default function Header() {
               <div
                 className="w-screen max-w-md flex-auto overflow-hidden rounded-3xl bg-white text-sm leading-6 shadow-lg ring-1 ring-gray-900/5">
                 <div className="p-2">
-                  {menusItems.map((item) => (
+                  {menusItems.filter(item => item.id !== 4).map((item) => (
                     <a href={item.href} key={item.name} className="group relative flex gap-x-6 rounded-2xl p-2 px-4 hover:bg-orange-50">
                       <div
                         className="mt-1 flex h-12 w-12 flex-none items-center justify-center rounded-2xl bg-orange-100 group-hover:bg-amber-900/80 transition duration-300 ease-in-out">

@@ -69,7 +69,7 @@ function InstagramButton() {
 function WhatsAppButton() {
   return (
     <a
-      href="https://wa.me/85264828315"
+      href="https://wa.me/85247079394"
       className="group flex flex-col items-center justify-center space-y-5 outline outline-4 outline-amber-900/80 hover:bg-amber-900/80 rounded-3xl sm:pl-12 pl-10 py-4">
       <div className="flex items-center justify-center space-x-2 text-amber-900/80 group-hover:text-white">
         <div className="group-hover:opacity-0 transition duration-300 ease-in-out">

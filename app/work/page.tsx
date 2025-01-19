@@ -66,13 +66,13 @@ export default function Work() {
         <div className="flex justify-evenly flex-wrap gap-10">
           {types.map((type) => (
             <button key={type.id} onClick={() => handleClick(type.id)}
-                    className="sm:w-96 bg-amber-50 overflow-hidden rounded-3xl shadow-2xl group relative hover:scale-[1.01] transition duration-1000">
+                    className="sm:w-96 bg-amber-50 overflow-hidden rounded-[40px] shadow-2xl group relative hover:scale-[1.01] transition-all duration-1000 hover:-rotate-1">
               <Image src={type.image} alt={type.alt}
                      className="aspect-[3/2] group-hover:scale-105 transition ease-in-out duration-1000"/>
               <ArrowRightIcon
                 className="absolute stroke-amber-50 top-4 right-4 h-8 transition group-hover:-rotate-45 duration-300"/>
               <div
-                className="bg-amber-50 flex flex-col sm:gap-4 gap-2 px-4 sm:px-6 pt-6 sm:pb-2 -translate-y-6 rounded-t-3xl items-center text-center">
+                className="bg-amber-50 flex flex-col sm:gap-3 gap-2 px-4 sm:px-6 pt-6 sm:pb-2 -translate-y-6 rounded-t-3xl items-center text-center">
                 <div className="sm:text-3xl text-xl text-amber-900 font-bold">
                   {type.title}
                 </div>

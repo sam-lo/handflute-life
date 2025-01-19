@@ -8,7 +8,7 @@ export default function Footer() {
     <>
         <div className="hidden md:flex flex-col gap-8 mb-2 mt-16 mx-16 selection:bg-amber-900/30">
           <div className="flex flex-wrap justify-evenly gap-16">
-            {menusItems.map((item) => (
+            {menusItems.filter(item => item.id !== 4).map((item) => (
               <div key={item.id} className="flex flex-col space-y-2 text-amber-900">
                 <a href={item.href}
                    className="flex items-center space-x-2 text-xl text-amber-900 font-medium mb-2 -translate-x-2">
@@ -37,7 +37,7 @@ export default function Footer() {
 function MobileAccordion() {
   return (
     <div className="w-full px-4 pb-8 block md:hidden">
-      {menusItems.map((item) => (
+      {menusItems.filter(item => item.id !== 4).map((item) => (
         <Disclosure key={item.id}>
           {({open}) => (
             <>

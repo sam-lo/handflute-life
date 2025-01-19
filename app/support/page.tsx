@@ -6,8 +6,8 @@ import {useSearchParams} from "next/navigation";
 export default function Question() {
   return (
     <Suspense fallback={<div>Loading...</div>}>
-        <QuestionPage/>
-      </Suspense>
+      <QuestionPage/>
+    </Suspense>
   )
 }
 
